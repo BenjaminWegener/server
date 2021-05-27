@@ -1,0 +1,1 @@
+/home/pi/.exodus/bin/ffmpeg -vsync 1 -thread_queue_size 16 -video_size 1020x420 -framerate 24  -f x11grab -i :0.0+2,256 -c:v h264_v4l2m2m -r:v 1024 -f pulse -i 0 -c:a aac -r:a 64k -bufsize 1024k -hls_time 1 -hls_list_size 0 -start_number 0 -lhls 1 -movflags faststart -preset ultrafast -tune zerolatency -crf 28 -rc_lookahead 0 -streaming 1 -pix_fmt nv12  record.mp4
